@@ -43,11 +43,15 @@ public class SonarWorker implements Runnable {
     }
 
     private void appendBinaryDigit(String s, final StringBuilder stringBuilder) {
-        int lastDigit = Integer.parseInt(s.substring(s.length() - 1));
-        if (lastDigit < 5) {
-            stringBuilder.append("0");
-        } else {
-            stringBuilder.append("1");
+        try {
+            int lastDigit = Integer.parseInt(s.substring(s.length() - 1));
+            if (lastDigit < 5) {
+                stringBuilder.append("0");
+            } else {
+                stringBuilder.append("1");
+            }
+        } catch (NumberFormatException e) {
+            return;
         }
     }
 }
