@@ -1,0 +1,16 @@
+.idea/
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
+
+/target/
